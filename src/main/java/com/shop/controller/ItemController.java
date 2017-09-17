@@ -19,7 +19,7 @@ public class ItemController {
     private DatabaseRepository repository;
 
     @RequestMapping(path = "/get/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Item> getItem(@PathVariable(value = "id") int id) {
+    public ResponseEntity<Item> getItem(@PathVariable(value = "id") long id) {
         Item item = repository.getItem(id);
         return new ResponseEntity<Item>(item, HttpStatus.OK);
     }
@@ -32,7 +32,7 @@ public class ItemController {
     }
 
     @RequestMapping(path = "/delete/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<String> deleteItem(@PathVariable(value = "id") int id) {
+    public ResponseEntity<String> deleteItem(@PathVariable(value = "id") long id) {
         repository.deleteItem(id);
         return ResponseEntity.status(HttpStatus.OK).build();
     }

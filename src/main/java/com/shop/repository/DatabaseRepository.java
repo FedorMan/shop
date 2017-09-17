@@ -15,7 +15,7 @@ import java.util.Map;
 @Repository
 public class DatabaseRepository {
 
-    private Map<Integer, Item> items;
+    private Map<Long, Item> items;
 
     public DatabaseRepository() {
         items = Collections.EMPTY_MAP;
@@ -29,11 +29,11 @@ public class DatabaseRepository {
         items.put(item.getId(), item);
     }
 
-    public Item getItem(int id) {
+    public Item getItem(long id) {
         return items.get(id);
     }
 
-    public void deleteItem(int id) {
+    public void deleteItem(long id) {
         items.remove(id);
     }
 }

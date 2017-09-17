@@ -1,21 +1,26 @@
 package com.shop.entity;
 
-/*
-    описать товар
- */
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Item {
     private String name;
-    private int id;
+
+    private @Id
+    @GeneratedValue
+    Long id;
 
     public Item(String name) {
         this.name = name;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
